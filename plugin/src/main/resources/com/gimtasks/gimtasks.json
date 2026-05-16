@@ -1,0 +1,9 @@
+{
+  "id": "gim-tasks",
+  "name": "GIM Tasks",
+  "description": "Shared task board for Group Ironman teams",
+  "tags": ["group", "ironman", "tasks", "gim"],
+  "version": "1.0",
+  "provider": "Your Name",
+  "support": ""
+}

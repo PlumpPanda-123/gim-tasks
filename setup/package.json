@@ -1,0 +1,13 @@
+{
+  "name": "gim-tasks-setup",
+  "version": "1.0.0",
+  "description": "Firestore setup scripts for GIM Tasks",
+  "main": "initFirestore.js",
+  "scripts": {
+    "init": "node initFirestore.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "uuid": "^9.0.0"
+  }
+}
