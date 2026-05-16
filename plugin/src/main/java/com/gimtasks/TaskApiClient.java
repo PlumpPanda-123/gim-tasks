@@ -55,7 +55,7 @@ public class TaskApiClient {
                     name, skill, quantity, assignee,
                     config.playerUsername(), priority));
                 Request req = baseRequest("/tasks")
-                    .post(RequestBody.create(body, JSON))
+                    .post(RequestBody.create(JSON, body))
                     .build();
                 Task task = executeSingleRequest(req);
                 onSuccess.accept(task);
@@ -72,7 +72,7 @@ public class TaskApiClient {
             try {
                 String body = gson.toJson(Collections.singletonMap("assignee", assignee));
                 Request req = baseRequest("/tasks/" + taskId + "/assign")
-                    .patch(RequestBody.create(body, JSON))
+                    .patch(RequestBody.create(JSON, body))
                     .build();
                 onSuccess.accept(executeSingleRequest(req));
             } catch (Exception e) {
@@ -88,7 +88,7 @@ public class TaskApiClient {
             try {
                 String body = gson.toJson(Collections.singletonMap("status", status));
                 Request req = baseRequest("/tasks/" + taskId + "/status")
-                    .patch(RequestBody.create(body, JSON))
+                    .patch(RequestBody.create(JSON, body))
                     .build();
                 onSuccess.accept(executeSingleRequest(req));
             } catch (Exception e) {
@@ -104,7 +104,7 @@ public class TaskApiClient {
             try {
                 String body = gson.toJson(Collections.singletonMap("quantityCompleted", quantityCompleted));
                 Request req = baseRequest("/tasks/" + taskId + "/progress")
-                    .patch(RequestBody.create(body, JSON))
+                    .patch(RequestBody.create(JSON, body))
                     .build();
                 onSuccess.accept(executeSingleRequest(req));
             } catch (Exception e) {
