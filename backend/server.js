@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(limiter);
 
 // Health check (no auth required)
-app.get('/health', (_req, res) => res.json({ status: 'ok' }));
+app.get('/health', (_req, res) => res.json({ status: 'ok', version: '2' }));
 
 // All routes below require a valid API key and group ID
 app.use(auth);
