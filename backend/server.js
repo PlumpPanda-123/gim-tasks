@@ -10,6 +10,9 @@ const tasksRoute = require('./routes/tasks');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
+// Railway (and most cloud platforms) sit behind a reverse proxy
+app.set('trust proxy', 1);
+
 // 120 requests per minute per IP — enough for 4 players polling every 10s with headroom
 const limiter = rateLimit({
     windowMs: 60 * 1000,
