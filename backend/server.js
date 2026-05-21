@@ -1,5 +1,9 @@
 require('dotenv').config();
 
+process.on('unhandledRejection', (err) => {
+  console.error('Unhandled rejection (non-fatal):', err?.message ?? err);
+});
+
 const express    = require('express');
 const cors       = require('cors');
 const rateLimit  = require('express-rate-limit');
